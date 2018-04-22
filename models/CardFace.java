@@ -6,6 +6,7 @@
 
 package com.scryfall.api.models;
 
+import java.util.List;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -38,10 +39,10 @@ public class CardFace {
     private String manaCost;
 
     /**
-     * Possible values include: 'W', 'U', 'B', 'R', 'G'.
+     * The colors property.
      */
     @JsonProperty(value = "colors")
-    private Colors colors;
+    private List<Colors> colors;
 
     /**
      * Possible values include: 'W', 'U', 'B', 'R', 'G'.
@@ -170,7 +171,7 @@ public class CardFace {
      *
      * @return the colors value
      */
-    public Colors colors() {
+    public List<Colors> colors() {
         return this.colors;
     }
 
@@ -180,7 +181,7 @@ public class CardFace {
      * @param colors the colors value to set
      * @return the CardFace object itself.
      */
-    public CardFace withColors(Colors colors) {
+    public CardFace withColors(List<Colors> colors) {
         this.colors = colors;
         return this;
     }
