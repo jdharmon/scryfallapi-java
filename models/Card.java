@@ -40,6 +40,12 @@ public class Card {
     private Integer mtgoId;
 
     /**
+     * The arenaId property.
+     */
+    @JsonProperty(value = "arena_id")
+    private Integer arenaId;
+
+    /**
      * The mtgoFoilId property.
      */
     @JsonProperty(value = "mtgo_foil_id")
@@ -76,7 +82,7 @@ public class Card {
     private String name;
 
     /**
-     * Possible values include: 'normal', 'split', 'transform', 'meld',
+     * Possible values include: 'normal', 'split', 'flip', 'transform', 'meld',
      * 'leveler', 'saga', 'planar', 'scheme', 'vanguard', 'token',
      * 'double_faced_token', 'emblem', 'augment', 'host'.
      */
@@ -159,7 +165,7 @@ public class Card {
      * The allParts property.
      */
     @JsonProperty(value = "all_parts")
-    private RelatedCards allParts;
+    private List<RelatedCards> allParts;
 
     /**
      * The cardFaces property.
@@ -411,6 +417,26 @@ public class Card {
     }
 
     /**
+     * Get the arenaId value.
+     *
+     * @return the arenaId value
+     */
+    public Integer arenaId() {
+        return this.arenaId;
+    }
+
+    /**
+     * Set the arenaId value.
+     *
+     * @param arenaId the arenaId value to set
+     * @return the Card object itself.
+     */
+    public Card withArenaId(Integer arenaId) {
+        this.arenaId = arenaId;
+        return this;
+    }
+
+    /**
      * Get the mtgoFoilId value.
      *
      * @return the mtgoFoilId value
@@ -531,7 +557,7 @@ public class Card {
     }
 
     /**
-     * Get the layout value.
+     * Get possible values include: 'normal', 'split', 'flip', 'transform', 'meld', 'leveler', 'saga', 'planar', 'scheme', 'vanguard', 'token', 'double_faced_token', 'emblem', 'augment', 'host'.
      *
      * @return the layout value
      */
@@ -540,7 +566,7 @@ public class Card {
     }
 
     /**
-     * Set the layout value.
+     * Set possible values include: 'normal', 'split', 'flip', 'transform', 'meld', 'leveler', 'saga', 'planar', 'scheme', 'vanguard', 'token', 'double_faced_token', 'emblem', 'augment', 'host'.
      *
      * @param layout the layout value to set
      * @return the Card object itself.
@@ -795,7 +821,7 @@ public class Card {
      *
      * @return the allParts value
      */
-    public RelatedCards allParts() {
+    public List<RelatedCards> allParts() {
         return this.allParts;
     }
 
@@ -805,7 +831,7 @@ public class Card {
      * @param allParts the allParts value to set
      * @return the Card object itself.
      */
-    public Card withAllParts(RelatedCards allParts) {
+    public Card withAllParts(List<RelatedCards> allParts) {
         this.allParts = allParts;
         return this;
     }
@@ -1071,7 +1097,7 @@ public class Card {
     }
 
     /**
-     * Get the rarity value.
+     * Get possible values include: 'common', 'uncommon', 'rare', 'mythic'.
      *
      * @return the rarity value
      */
@@ -1080,7 +1106,7 @@ public class Card {
     }
 
     /**
-     * Set the rarity value.
+     * Set possible values include: 'common', 'uncommon', 'rare', 'mythic'.
      *
      * @param rarity the rarity value to set
      * @return the Card object itself.
@@ -1211,7 +1237,7 @@ public class Card {
     }
 
     /**
-     * Get the borderColor value.
+     * Get possible values include: 'black', 'borderless', 'gold', 'silver', 'white'.
      *
      * @return the borderColor value
      */
@@ -1220,7 +1246,7 @@ public class Card {
     }
 
     /**
-     * Set the borderColor value.
+     * Set possible values include: 'black', 'borderless', 'gold', 'silver', 'white'.
      *
      * @param borderColor the borderColor value to set
      * @return the Card object itself.

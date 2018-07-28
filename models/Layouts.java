@@ -19,6 +19,9 @@ public enum Layouts {
     /** Enum value split. */
     SPLIT("split"),
 
+    /** Enum value flip. */
+    FLIP("flip"),
+
     /** Enum value transform. */
     TRANSFORM("transform"),
 

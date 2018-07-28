@@ -89,7 +89,7 @@ public class ManaCost {
     }
 
     /**
-     * Get the colors value.
+     * Get possible values include: 'W', 'U', 'B', 'R', 'G'.
      *
      * @return the colors value
      */
@@ -98,7 +98,7 @@ public class ManaCost {
     }
 
     /**
-     * Set the colors value.
+     * Set possible values include: 'W', 'U', 'B', 'R', 'G'.
      *
      * @param colors the colors value to set
      * @return the ManaCost object itself.

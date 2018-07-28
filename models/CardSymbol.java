@@ -227,7 +227,7 @@ public class CardSymbol {
     }
 
     /**
-     * Get the colors value.
+     * Get possible values include: 'W', 'U', 'B', 'R', 'G'.
      *
      * @return the colors value
      */
@@ -236,7 +236,7 @@ public class CardSymbol {
     }
 
     /**
-     * Set the colors value.
+     * Set possible values include: 'W', 'U', 'B', 'R', 'G'.
      *
      * @param colors the colors value to set
      * @return the CardSymbol object itself.

@@ -84,6 +84,10 @@ public class CardsImpl implements Cards {
         @GET("cards/mtgo/{id}")
         Observable<Response<ResponseBody>> getByMtgoId(@Path("id") int id);
 
+        @Headers({ "Content-Type: application/json; charset=utf-8", "x-ms-logging-context: com.scryfall.api.Cards getByArenaId" })
+        @GET("cards/arena/{id}")
+        Observable<Response<ResponseBody>> getByArenaId(@Path("id") int id);
+
         @Headers({ "Content-Type: application/json; charset=utf-8", "x-ms-logging-context: com.scryfall.api.Cards getByCodeByNumber" })
         @GET("cards/{code}/{number}")
         Observable<Response<ResponseBody>> getByCodeByNumber(@Path("code") String code, @Path("number") int number);
@@ -781,6 +785,72 @@ public class CardsImpl implements Cards {
     }
 
     private ServiceResponse<Card> getByMtgoIdDelegate(Response<ResponseBody> response) throws ErrorException, IOException {
+        return this.client.restClient().responseBuilderFactory().<Card, ErrorException>newInstance(this.client.serializerAdapter())
+                .register(200, new TypeToken<Card>() { }.getType())
+                .registerError(ErrorException.class)
+                .build(response);
+    }
+
+    /**
+     *
+     * @param id the int value
+     * @throws IllegalArgumentException thrown if parameters fail the validation
+     * @throws ErrorException thrown if the request is rejected by server
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent
+     * @return the Card object if successful.
+     */
+    public Card getByArenaId(int id) {
+        return getByArenaIdWithServiceResponseAsync(id).toBlocking().single().body();
+    }
+
+    /**
+     *
+     * @param id the int value
+     * @param serviceCallback the async ServiceCallback to handle successful and failed responses.
+     * @throws IllegalArgumentException thrown if parameters fail the validation
+     * @return the {@link ServiceFuture} object
+     */
+    public ServiceFuture<Card> getByArenaIdAsync(int id, final ServiceCallback<Card> serviceCallback) {
+        return ServiceFuture.fromResponse(getByArenaIdWithServiceResponseAsync(id), serviceCallback);
+    }
+
+    /**
+     *
+     * @param id the int value
+     * @throws IllegalArgumentException thrown if parameters fail the validation
+     * @return the observable to the Card object
+     */
+    public Observable<Card> getByArenaIdAsync(int id) {
+        return getByArenaIdWithServiceResponseAsync(id).map(new Func1<ServiceResponse<Card>, Card>() {
+            @Override
+            public Card call(ServiceResponse<Card> response) {
+                return response.body();
+            }
+        });
+    }
+
+    /**
+     *
+     * @param id the int value
+     * @throws IllegalArgumentException thrown if parameters fail the validation
+     * @return the observable to the Card object
+     */
+    public Observable<ServiceResponse<Card>> getByArenaIdWithServiceResponseAsync(int id) {
+        return service.getByArenaId(id)
+            .flatMap(new Func1<Response<ResponseBody>, Observable<ServiceResponse<Card>>>() {
+                @Override
+                public Observable<ServiceResponse<Card>> call(Response<ResponseBody> response) {
+                    try {
+                        ServiceResponse<Card> clientResponse = getByArenaIdDelegate(response);
+                        return Observable.just(clientResponse);
+                    } catch (Throwable t) {
+                        return Observable.error(t);
+                    }
+                }
+            });
+    }
+
+    private ServiceResponse<Card> getByArenaIdDelegate(Response<ResponseBody> response) throws ErrorException, IOException {
         return this.client.restClient().responseBuilderFactory().<Card, ErrorException>newInstance(this.client.serializerAdapter())
                 .register(200, new TypeToken<Card>() { }.getType())
                 .registerError(ErrorException.class)

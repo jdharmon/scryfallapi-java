@@ -13,79 +13,79 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Legality {
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "standard")
     private LegalStatus standard;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "future")
     private LegalStatus future;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "frontier")
     private LegalStatus frontier;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "modern")
     private LegalStatus modern;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "legacy")
     private LegalStatus legacy;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "pauper")
     private LegalStatus pauper;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "vintage")
     private LegalStatus vintage;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "penny")
     private LegalStatus penny;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "commander")
     private LegalStatus commander;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "1v1")
     private LegalStatus onevOne;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "duel")
     private LegalStatus duel;
 
     /**
-     * Possible values include: 'legal', 'not_legal'.
+     * Possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      */
     @JsonProperty(value = "brawl")
     private LegalStatus brawl;
 
     /**
-     * Get the standard value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the standard value
      */
@@ -94,7 +94,7 @@ public class Legality {
     }
 
     /**
-     * Set the standard value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param standard the standard value to set
      * @return the Legality object itself.
@@ -105,7 +105,7 @@ public class Legality {
     }
 
     /**
-     * Get the future value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the future value
      */
@@ -114,7 +114,7 @@ public class Legality {
     }
 
     /**
-     * Set the future value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param future the future value to set
      * @return the Legality object itself.
@@ -125,7 +125,7 @@ public class Legality {
     }
 
     /**
-     * Get the frontier value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the frontier value
      */
@@ -134,7 +134,7 @@ public class Legality {
     }
 
     /**
-     * Set the frontier value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param frontier the frontier value to set
      * @return the Legality object itself.
@@ -145,7 +145,7 @@ public class Legality {
     }
 
     /**
-     * Get the modern value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the modern value
      */
@@ -154,7 +154,7 @@ public class Legality {
     }
 
     /**
-     * Set the modern value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param modern the modern value to set
      * @return the Legality object itself.
@@ -165,7 +165,7 @@ public class Legality {
     }
 
     /**
-     * Get the legacy value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the legacy value
      */
@@ -174,7 +174,7 @@ public class Legality {
     }
 
     /**
-     * Set the legacy value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param legacy the legacy value to set
      * @return the Legality object itself.
@@ -185,7 +185,7 @@ public class Legality {
     }
 
     /**
-     * Get the pauper value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the pauper value
      */
@@ -194,7 +194,7 @@ public class Legality {
     }
 
     /**
-     * Set the pauper value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param pauper the pauper value to set
      * @return the Legality object itself.
@@ -205,7 +205,7 @@ public class Legality {
     }
 
     /**
-     * Get the vintage value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the vintage value
      */
@@ -214,7 +214,7 @@ public class Legality {
     }
 
     /**
-     * Set the vintage value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param vintage the vintage value to set
      * @return the Legality object itself.
@@ -225,7 +225,7 @@ public class Legality {
     }
 
     /**
-     * Get the penny value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the penny value
      */
@@ -234,7 +234,7 @@ public class Legality {
     }
 
     /**
-     * Set the penny value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param penny the penny value to set
      * @return the Legality object itself.
@@ -245,7 +245,7 @@ public class Legality {
     }
 
     /**
-     * Get the commander value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the commander value
      */
@@ -254,7 +254,7 @@ public class Legality {
     }
 
     /**
-     * Set the commander value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param commander the commander value to set
      * @return the Legality object itself.
@@ -265,7 +265,7 @@ public class Legality {
     }
 
     /**
-     * Get the onevOne value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the onevOne value
      */
@@ -274,7 +274,7 @@ public class Legality {
     }
 
     /**
-     * Set the onevOne value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param onevOne the onevOne value to set
      * @return the Legality object itself.
@@ -285,7 +285,7 @@ public class Legality {
     }
 
     /**
-     * Get the duel value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the duel value
      */
@@ -294,7 +294,7 @@ public class Legality {
     }
 
     /**
-     * Set the duel value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param duel the duel value to set
      * @return the Legality object itself.
@@ -305,7 +305,7 @@ public class Legality {
     }
 
     /**
-     * Get the brawl value.
+     * Get possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @return the brawl value
      */
@@ -314,7 +314,7 @@ public class Legality {
     }
 
     /**
-     * Set the brawl value.
+     * Set possible values include: 'legal', 'not_legal', 'restricted', 'banned'.
      *
      * @param brawl the brawl value to set
      * @return the Legality object itself.

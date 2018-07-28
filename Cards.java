@@ -406,6 +406,41 @@ public interface Cards {
 
     /**
      *
+     * @param id the int value
+     * @throws IllegalArgumentException thrown if parameters fail the validation
+     * @throws ErrorException thrown if the request is rejected by server
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent
+     * @return the Card object if successful.
+     */
+    Card getByArenaId(int id);
+
+    /**
+     *
+     * @param id the int value
+     * @param serviceCallback the async ServiceCallback to handle successful and failed responses.
+     * @throws IllegalArgumentException thrown if parameters fail the validation
+     * @return the {@link ServiceFuture} object
+     */
+    ServiceFuture<Card> getByArenaIdAsync(int id, final ServiceCallback<Card> serviceCallback);
+
+    /**
+     *
+     * @param id the int value
+     * @throws IllegalArgumentException thrown if parameters fail the validation
+     * @return the observable to the Card object
+     */
+    Observable<Card> getByArenaIdAsync(int id);
+
+    /**
+     *
+     * @param id the int value
+     * @throws IllegalArgumentException thrown if parameters fail the validation
+     * @return the observable to the Card object
+     */
+    Observable<ServiceResponse<Card>> getByArenaIdWithServiceResponseAsync(int id);
+
+    /**
+     *
      * @param code the String value
      * @param number the int value
      * @throws IllegalArgumentException thrown if parameters fail the validation

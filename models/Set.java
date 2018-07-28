@@ -155,7 +155,7 @@ public class Set {
     }
 
     /**
-     * Get the setType value.
+     * Get possible values include: 'core', 'expansion', 'masters', 'masterpiece', 'from_the_vault', 'spellbook', 'premium_deck', 'duel_deck', 'commander', 'planechase', 'conspiracy', 'archenemy', 'vanguard', 'funny', 'starter', 'box', 'promo', 'token', 'memorabilia', 'treasure_chest'.
      *
      * @return the setType value
      */
@@ -164,7 +164,7 @@ public class Set {
     }
 
     /**
-     * Set the setType value.
+     * Set possible values include: 'core', 'expansion', 'masters', 'masterpiece', 'from_the_vault', 'spellbook', 'premium_deck', 'duel_deck', 'commander', 'planechase', 'conspiracy', 'archenemy', 'vanguard', 'funny', 'starter', 'box', 'promo', 'token', 'memorabilia', 'treasure_chest'.
      *
      * @param setType the setType value to set
      * @return the Set object itself.

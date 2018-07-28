@@ -17,7 +17,13 @@ public enum LegalStatus {
     LEGAL("legal"),
 
     /** Enum value not_legal. */
-    NOT_LEGAL("not_legal");
+    NOT_LEGAL("not_legal"),
+
+    /** Enum value restricted. */
+    RESTRICTED("restricted"),
+
+    /** Enum value banned. */
+    BANNED("banned");
 
     /** The actual serialized value for a LegalStatus instance. */
     private String value;

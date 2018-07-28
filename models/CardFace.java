@@ -45,10 +45,10 @@ public class CardFace {
     private List<Colors> colors;
 
     /**
-     * Possible values include: 'W', 'U', 'B', 'R', 'G'.
+     * The colorIndicator property.
      */
     @JsonProperty(value = "color_indicator")
-    private Colors colorIndicator;
+    private List<Colors> colorIndicator;
 
     /**
      * The power property.
@@ -191,7 +191,7 @@ public class CardFace {
      *
      * @return the colorIndicator value
      */
-    public Colors colorIndicator() {
+    public List<Colors> colorIndicator() {
         return this.colorIndicator;
     }
 
@@ -201,7 +201,7 @@ public class CardFace {
      * @param colorIndicator the colorIndicator value to set
      * @return the CardFace object itself.
      */
-    public CardFace withColorIndicator(Colors colorIndicator) {
+    public CardFace withColorIndicator(List<Colors> colorIndicator) {
         this.colorIndicator = colorIndicator;
         return this;
     }
