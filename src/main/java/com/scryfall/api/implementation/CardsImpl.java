@@ -56,10 +56,6 @@ public class CardsImpl implements Cards {
      * used by Retrofit to perform actually REST calls.
      */
     interface CardsService {
-        @Headers({ "Content-Type: application/json; charset=utf-8", "x-ms-logging-context: com.scryfall.api.Cards getAll" })
-        @GET("cards")
-        Observable<Response<ResponseBody>> getAll(@Query("page") Integer page);
-
         @Headers({ "Content-Type: application/json; charset=utf-8", "x-ms-logging-context: com.scryfall.api.Cards search" })
         @GET("cards/search")
         Observable<Response<ResponseBody>> search(@Query("q") String q, @Query("unique") UniqueStrategy unique, @Query("order") SortOrder order, @Query("dir") SortDirection dir, @Query("include_extras") Boolean includeExtras, @Query("page") Integer page);
@@ -96,128 +92,6 @@ public class CardsImpl implements Cards {
         @GET("cards/{id}")
         Observable<Response<ResponseBody>> getById(@Path("id") UUID id);
 
-    }
-
-    /**
-     *
-     * @throws IllegalArgumentException thrown if parameters fail the validation
-     * @throws ErrorException thrown if the request is rejected by server
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent
-     * @return the CardList object if successful.
-     */
-    public CardList getAll() {
-        return getAllWithServiceResponseAsync().toBlocking().single().body();
-    }
-
-    /**
-     *
-     * @param serviceCallback the async ServiceCallback to handle successful and failed responses.
-     * @throws IllegalArgumentException thrown if parameters fail the validation
-     * @return the {@link ServiceFuture} object
-     */
-    public ServiceFuture<CardList> getAllAsync(final ServiceCallback<CardList> serviceCallback) {
-        return ServiceFuture.fromResponse(getAllWithServiceResponseAsync(), serviceCallback);
-    }
-
-    /**
-     *
-     * @throws IllegalArgumentException thrown if parameters fail the validation
-     * @return the observable to the CardList object
-     */
-    public Observable<CardList> getAllAsync() {
-        return getAllWithServiceResponseAsync().map(new Func1<ServiceResponse<CardList>, CardList>() {
-            @Override
-            public CardList call(ServiceResponse<CardList> response) {
-                return response.body();
-            }
-        });
-    }
-
-    /**
-     *
-     * @throws IllegalArgumentException thrown if parameters fail the validation
-     * @return the observable to the CardList object
-     */
-    public Observable<ServiceResponse<CardList>> getAllWithServiceResponseAsync() {
-        final Integer page = null;
-        return service.getAll(page)
-            .flatMap(new Func1<Response<ResponseBody>, Observable<ServiceResponse<CardList>>>() {
-                @Override
-                public Observable<ServiceResponse<CardList>> call(Response<ResponseBody> response) {
-                    try {
-                        ServiceResponse<CardList> clientResponse = getAllDelegate(response);
-                        return Observable.just(clientResponse);
-                    } catch (Throwable t) {
-                        return Observable.error(t);
-                    }
-                }
-            });
-    }
-
-    /**
-     *
-     * @param page the Integer value
-     * @throws IllegalArgumentException thrown if parameters fail the validation
-     * @throws ErrorException thrown if the request is rejected by server
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent
-     * @return the CardList object if successful.
-     */
-    public CardList getAll(Integer page) {
-        return getAllWithServiceResponseAsync(page).toBlocking().single().body();
-    }
-
-    /**
-     *
-     * @param page the Integer value
-     * @param serviceCallback the async ServiceCallback to handle successful and failed responses.
-     * @throws IllegalArgumentException thrown if parameters fail the validation
-     * @return the {@link ServiceFuture} object
-     */
-    public ServiceFuture<CardList> getAllAsync(Integer page, final ServiceCallback<CardList> serviceCallback) {
-        return ServiceFuture.fromResponse(getAllWithServiceResponseAsync(page), serviceCallback);
-    }
-
-    /**
-     *
-     * @param page the Integer value
-     * @throws IllegalArgumentException thrown if parameters fail the validation
-     * @return the observable to the CardList object
-     */
-    public Observable<CardList> getAllAsync(Integer page) {
-        return getAllWithServiceResponseAsync(page).map(new Func1<ServiceResponse<CardList>, CardList>() {
-            @Override
-            public CardList call(ServiceResponse<CardList> response) {
-                return response.body();
-            }
-        });
-    }
-
-    /**
-     *
-     * @param page the Integer value
-     * @throws IllegalArgumentException thrown if parameters fail the validation
-     * @return the observable to the CardList object
-     */
-    public Observable<ServiceResponse<CardList>> getAllWithServiceResponseAsync(Integer page) {
-        return service.getAll(page)
-            .flatMap(new Func1<Response<ResponseBody>, Observable<ServiceResponse<CardList>>>() {
-                @Override
-                public Observable<ServiceResponse<CardList>> call(Response<ResponseBody> response) {
-                    try {
-                        ServiceResponse<CardList> clientResponse = getAllDelegate(response);
-                        return Observable.just(clientResponse);
-                    } catch (Throwable t) {
-                        return Observable.error(t);
-                    }
-                }
-            });
-    }
-
-    private ServiceResponse<CardList> getAllDelegate(Response<ResponseBody> response) throws ErrorException, IOException {
-        return this.client.restClient().responseBuilderFactory().<CardList, ErrorException>newInstance(this.client.serializerAdapter())
-                .register(200, new TypeToken<CardList>() { }.getType())
-                .registerError(ErrorException.class)
-                .build(response);
     }
 
     /**
